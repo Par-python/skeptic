@@ -1,0 +1,77 @@
+{
+ "calibration": {
+  "phi=0.0": {
+   "check": "null_calibration",
+   "name": "V4 | phi=0.0",
+   "trials": 200,
+   "alpha": 0.05,
+   "false_positives": 12,
+   "false_positive_rate": 0.06,
+   "ci95": [
+    0.035,
+    0.102
+   ],
+   "verdict": "CALIBRATED",
+   "reasons": []
+  },
+  "phi=0.5": {
+   "check": "null_calibration",
+   "name": "V4 | phi=0.5",
+   "trials": 200,
+   "alpha": 0.05,
+   "false_positives": 10,
+   "false_positive_rate": 0.05,
+   "ci95": [
+    0.027,
+    0.09
+   ],
+   "verdict": "CALIBRATED",
+   "reasons": []
+  },
+  "phi=0.9": {
+   "check": "null_calibration",
+   "name": "V4 | phi=0.9",
+   "trials": 200,
+   "alpha": 0.05,
+   "false_positives": 35,
+   "false_positive_rate": 0.175,
+   "ci95": [
+    0.129,
+    0.234
+   ],
+   "verdict": "MISCALIBRATED",
+   "reasons": [
+    "says 'significant' 18% of the time on data with no effect (should be about 5%); 95% CI 13%-23%"
+   ]
+  }
+ },
+ "power": {
+  "step=1.0sd": {
+   "check": "power",
+   "name": "V4 | step 1.0 sd",
+   "trials": 100,
+   "detected": 26,
+   "power": 0.26,
+   "ci95": [
+    0.184,
+    0.354
+   ]
+  },
+  "step=1.5sd": {
+   "check": "power",
+   "name": "V4 | step 1.5 sd",
+   "trials": 100,
+   "detected": 44,
+   "power": 0.44,
+   "ci95": [
+    0.347,
+    0.538
+   ]
+  }
+ },
+ "pass_rule": {
+  "calibrated_all_phi": false,
+  "power_ok": false,
+  "passes": false
+ }
+}

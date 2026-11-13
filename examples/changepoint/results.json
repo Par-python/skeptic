@@ -1,0 +1,327 @@
+{
+ "calibration": {
+  "V0 naive (the bug)": {
+   "phi=0.0": {
+    "check": "null_calibration",
+    "name": "V0 naive (the bug) | phi=0.0",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 154,
+    "false_positive_rate": 0.77,
+    "ci95": [
+     0.707,
+     0.823
+    ],
+    "verdict": "MISCALIBRATED",
+    "reasons": [
+     "says 'significant' 77% of the time on data with no effect (should be about 5%); 95% CI 71%-82%"
+    ]
+   },
+   "phi=0.5": {
+    "check": "null_calibration",
+    "name": "V0 naive (the bug) | phi=0.5",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 188,
+    "false_positive_rate": 0.94,
+    "ci95": [
+     0.898,
+     0.965
+    ],
+    "verdict": "MISCALIBRATED",
+    "reasons": [
+     "says 'significant' 94% of the time on data with no effect (should be about 5%); 95% CI 90%-96%"
+    ]
+   },
+   "phi=0.9": {
+    "check": "null_calibration",
+    "name": "V0 naive (the bug) | phi=0.9",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 183,
+    "false_positive_rate": 0.915,
+    "ci95": [
+     0.868,
+     0.946
+    ],
+    "verdict": "MISCALIBRATED",
+    "reasons": [
+     "says 'significant' 92% of the time on data with no effect (should be about 5%); 95% CI 87%-95%"
+    ]
+   }
+  },
+  "C1 random index (control)": {
+   "phi=0.0": {
+    "check": "null_calibration",
+    "name": "C1 random index (control) | phi=0.0",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 10,
+    "false_positive_rate": 0.05,
+    "ci95": [
+     0.027,
+     0.09
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.5": {
+    "check": "null_calibration",
+    "name": "C1 random index (control) | phi=0.5",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 8,
+    "false_positive_rate": 0.04,
+    "ci95": [
+     0.02,
+     0.077
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.9": {
+    "check": "null_calibration",
+    "name": "C1 random index (control) | phi=0.9",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 23,
+    "false_positive_rate": 0.115,
+    "ci95": [
+     0.078,
+     0.167
+    ],
+    "verdict": "MISCALIBRATED",
+    "reasons": [
+     "says 'significant' 12% of the time on data with no effect (should be about 5%); 95% CI 8%-17%"
+    ]
+   }
+  },
+  "V1 selection-aware, block shuffle": {
+   "phi=0.0": {
+    "check": "null_calibration",
+    "name": "V1 selection-aware, block shuffle | phi=0.0",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 7,
+    "false_positive_rate": 0.035,
+    "ci95": [
+     0.017,
+     0.07
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.5": {
+    "check": "null_calibration",
+    "name": "V1 selection-aware, block shuffle | phi=0.5",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 38,
+    "false_positive_rate": 0.19,
+    "ci95": [
+     0.142,
+     0.25
+    ],
+    "verdict": "MISCALIBRATED",
+    "reasons": [
+     "says 'significant' 19% of the time on data with no effect (should be about 5%); 95% CI 14%-25%"
+    ]
+   },
+   "phi=0.9": {
+    "check": "null_calibration",
+    "name": "V1 selection-aware, block shuffle | phi=0.9",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 59,
+    "false_positive_rate": 0.295,
+    "ci95": [
+     0.236,
+     0.362
+    ],
+    "verdict": "MISCALIBRATED",
+    "reasons": [
+     "says 'significant' 30% of the time on data with no effect (should be about 5%); 95% CI 24%-36%"
+    ]
+   }
+  },
+  "V2 selection-aware, phase-randomized": {
+   "phi=0.0": {
+    "check": "null_calibration",
+    "name": "V2 selection-aware, phase-randomized | phi=0.0",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 10,
+    "false_positive_rate": 0.05,
+    "ci95": [
+     0.027,
+     0.09
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.5": {
+    "check": "null_calibration",
+    "name": "V2 selection-aware, phase-randomized | phi=0.5",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 14,
+    "false_positive_rate": 0.07,
+    "ci95": [
+     0.042,
+     0.114
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.9": {
+    "check": "null_calibration",
+    "name": "V2 selection-aware, phase-randomized | phi=0.9",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 6,
+    "false_positive_rate": 0.03,
+    "ci95": [
+     0.014,
+     0.064
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   }
+  },
+  "V3 selection-aware, AR(1) bootstrap": {
+   "phi=0.0": {
+    "check": "null_calibration",
+    "name": "V3 selection-aware, AR(1) bootstrap | phi=0.0",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 5,
+    "false_positive_rate": 0.025,
+    "ci95": [
+     0.011,
+     0.057
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.5": {
+    "check": "null_calibration",
+    "name": "V3 selection-aware, AR(1) bootstrap | phi=0.5",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 13,
+    "false_positive_rate": 0.065,
+    "ci95": [
+     0.038,
+     0.108
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   },
+   "phi=0.9": {
+    "check": "null_calibration",
+    "name": "V3 selection-aware, AR(1) bootstrap | phi=0.9",
+    "trials": 200,
+    "alpha": 0.05,
+    "false_positives": 9,
+    "false_positive_rate": 0.045,
+    "ci95": [
+     0.024,
+     0.083
+    ],
+    "verdict": "CALIBRATED",
+    "reasons": []
+   }
+  }
+ },
+ "power": {
+  "V1 selection-aware, block shuffle": {
+   "step=1.0sd": {
+    "check": "power",
+    "name": "V1 selection-aware, block shuffle | step 1.0 sd",
+    "trials": 100,
+    "detected": 8,
+    "power": 0.08,
+    "ci95": [
+     0.041,
+     0.15
+    ]
+   },
+   "step=1.5sd": {
+    "check": "power",
+    "name": "V1 selection-aware, block shuffle | step 1.5 sd",
+    "trials": 100,
+    "detected": 6,
+    "power": 0.06,
+    "ci95": [
+     0.028,
+     0.125
+    ]
+   }
+  },
+  "V2 selection-aware, phase-randomized": {
+   "step=1.0sd": {
+    "check": "power",
+    "name": "V2 selection-aware, phase-randomized | step 1.0 sd",
+    "trials": 100,
+    "detected": 4,
+    "power": 0.04,
+    "ci95": [
+     0.016,
+     0.098
+    ]
+   },
+   "step=1.5sd": {
+    "check": "power",
+    "name": "V2 selection-aware, phase-randomized | step 1.5 sd",
+    "trials": 100,
+    "detected": 3,
+    "power": 0.03,
+    "ci95": [
+     0.01,
+     0.085
+    ]
+   }
+  },
+  "V3 selection-aware, AR(1) bootstrap": {
+   "step=1.0sd": {
+    "check": "power",
+    "name": "V3 selection-aware, AR(1) bootstrap | step 1.0 sd",
+    "trials": 100,
+    "detected": 1,
+    "power": 0.01,
+    "ci95": [
+     0.002,
+     0.054
+    ]
+   },
+   "step=1.5sd": {
+    "check": "power",
+    "name": "V3 selection-aware, AR(1) bootstrap | step 1.5 sd",
+    "trials": 100,
+    "detected": 3,
+    "power": 0.03,
+    "ci95": [
+     0.01,
+     0.085
+    ]
+   }
+  }
+ },
+ "pass_rule": {
+  "V1 selection-aware, block shuffle": {
+   "calibrated_all_phi": false,
+   "power_ok": false,
+   "passes": false
+  },
+  "V2 selection-aware, phase-randomized": {
+   "calibrated_all_phi": true,
+   "power_ok": false,
+   "passes": false
+  },
+  "V3 selection-aware, AR(1) bootstrap": {
+   "calibrated_all_phi": true,
+   "power_ok": false,
+   "passes": false
+  }
+ }
+}
