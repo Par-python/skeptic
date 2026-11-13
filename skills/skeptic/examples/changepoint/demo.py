@@ -131,7 +131,7 @@ def main():
     verdicts = {}
     for name in list(TESTS)[2:]:
         cal = out["calibration"][name].values()
-        ok_cal = all(c["verdict"] == "CALIBRATED" and c["false_positive_rate"] <= 0.075 for c in cal)
+        ok_cal = all(c["ci95"][0] <= 0.05 and c["false_positive_rate"] <= 0.075 for c in cal)
         ok_pow = out["power"][name]["step=1.5sd"]["power"] >= 0.5
         verdicts[name] = {"calibrated_all_phi": ok_cal, "power_ok": ok_pow, "passes": ok_cal and ok_pow}
     out["pass_rule"] = verdicts

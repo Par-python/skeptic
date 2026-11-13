@@ -46,7 +46,7 @@ for size in (1.0, 1.5):
     card = skeptic.power(v4, gen, n_trials=demo.POWER_SERIES, name=f"V4 | step {size} sd")
     out["power"][f"step={size}sd"] = card
     print(f"power V4 step {size} sd: {card['power']:.0%}  CI {card['ci95'][0]:.0%}-{card['ci95'][1]:.0%}")
-ok_cal = all(c["verdict"] == "CALIBRATED" and c["false_positive_rate"] <= 0.075 for c in out["calibration"].values())
+ok_cal = all(c["ci95"][0] <= 0.05 and c["false_positive_rate"] <= 0.075 for c in out["calibration"].values())
 ok_pow = out["power"]["step=1.5sd"]["power"] >= 0.5
 out["pass_rule"] = {"calibrated_all_phi": ok_cal, "power_ok": ok_pow, "passes": ok_cal and ok_pow}
 print(out["pass_rule"])

@@ -2,6 +2,8 @@
 
 1. "These two trends are correlated, p < 0.05."  Two random walks with no link at all.
 2. "My model is 79% accurate."                     Always guessing 'no' does better.
+3. "Our churn model is 90.5% accurate."            Also loses to 'no' (92%), but its flags are 5x richer
+                                                    in churners than random. Wrong claim, useful model.
 """
 import sys
 from pathlib import Path
@@ -45,5 +47,12 @@ cards = [
 y_true = [1] * 3 + [0] * 16
 y_pred = [0] * 3 + [1] + [0] * 15
 cards.append(skeptic.baseline_check(y_true, y_pred, claimed_beats=True, name="'79% accurate' model"))
+
+# ---- 3. same OVERCLAIM on accuracy, but the flags have real lift: judge it as a detector instead
+churn_true = [1] * 48 + [0] * 552                       # 600 customers, 8% churn
+churn_pred = [1] * 17 + [0] * 31 + [1] * 26 + [0] * 526  # flags 43, 17 of them churned
+cards.append(skeptic.baseline_check(churn_true, churn_pred, claimed_beats=True, name="'90.5% accurate' churn model"))
+cards.append(skeptic.baseline_check(churn_true, churn_pred, claimed_beats=True, claim="detection",
+                                    name="churn flags as a call list"))
 
 print(skeptic.receipt(cards, title="quickstart receipt"))

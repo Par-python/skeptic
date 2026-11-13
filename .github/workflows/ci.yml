@@ -1,0 +1,52 @@
+name: ci
+
+on:
+  push:
+    branches: [master]
+    tags: ["v*"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install numpy scipy pandas pytest
+      - run: python -m pytest tests/ -q
+      - name: Examples run
+        run: |
+          python skills/skeptic/examples/quickstart.py
+          cd skills/skeptic/examples/changepoint && python demo.py > /dev/null && git diff --exit-code -- results.json || echo "::warning::results.json differs from committed copy"
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install -g @anthropic-ai/claude-code
+      - run: claude plugin validate --strict .
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [test, validate]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build claude.ai skill zip
+        run: |
+          mkdir -p dist
+          cd skills && zip -r ../dist/skeptic-skill.zip skeptic -x '*/__pycache__/*' '*.pyc'
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/skeptic-skill.zip
+          generate_release_notes: true

@@ -12,7 +12,10 @@
     0.102
    ],
    "verdict": "CALIBRATED",
-   "reasons": []
+   "reasons": [],
+   "notes": [
+    "200 trials rule out false-positive rates above 10.2%, not milder inflation"
+   ]
   },
   "phi=0.5": {
    "check": "null_calibration",
@@ -26,7 +29,10 @@
     0.09
    ],
    "verdict": "CALIBRATED",
-   "reasons": []
+   "reasons": [],
+   "notes": [
+    "200 trials rule out false-positive rates above 9.0%, not milder inflation"
+   ]
   },
   "phi=0.9": {
    "check": "null_calibration",
@@ -41,8 +47,9 @@
    ],
    "verdict": "MISCALIBRATED",
    "reasons": [
-    "says 'significant' 18% of the time on data with no effect (should be about 5%); 95% CI 13%-23%"
-   ]
+    "says 'significant' 17.5% of the time on data with no effect (should be about 5%); 95% CI 12.9%-23.4%"
+   ],
+   "notes": []
   }
  },
  "power": {
@@ -51,22 +58,36 @@
    "name": "V4 | step 1.0 sd",
    "trials": 100,
    "detected": 26,
+   "alpha": 0.05,
    "power": 0.26,
    "ci95": [
     0.184,
     0.354
-   ]
+   ],
+   "min_power": 0.5,
+   "verdict": "LOW POWER",
+   "reasons": [
+    "finds the planted effect only 26% of the time (want at least 50%): a 'no effect' result here means little"
+   ],
+   "notes": []
   },
   "step=1.5sd": {
    "check": "power",
    "name": "V4 | step 1.5 sd",
    "trials": 100,
    "detected": 44,
+   "alpha": 0.05,
    "power": 0.44,
    "ci95": [
     0.347,
     0.538
-   ]
+   ],
+   "min_power": 0.5,
+   "verdict": "LOW POWER",
+   "reasons": [
+    "finds the planted effect only 44% of the time (want at least 50%): a 'no effect' result here means little"
+   ],
+   "notes": []
   }
  },
  "pass_rule": {

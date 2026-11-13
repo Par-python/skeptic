@@ -1,0 +1,13 @@
+{
+  "name": "skeptic",
+  "displayName": "skeptic",
+  "version": "0.2.0",
+  "description": "Check whether a data result is real or would show up from nothing: runs your own significance test on pure noise, compares models to do-nothing baselines, and verifies fixes for both calibration and power.",
+  "author": {
+    "name": "John Jerome Pardo"
+  },
+  "homepage": "https://github.com/Par-python/skeptic",
+  "repository": "https://github.com/Par-python/skeptic",
+  "license": "MIT",
+  "keywords": ["statistics", "data-analysis", "significance", "p-value", "baseline", "calibration", "time-series"]
+}

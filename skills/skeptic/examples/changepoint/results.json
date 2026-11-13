@@ -14,8 +14,9 @@
     ],
     "verdict": "MISCALIBRATED",
     "reasons": [
-     "says 'significant' 77% of the time on data with no effect (should be about 5%); 95% CI 71%-82%"
-    ]
+     "says 'significant' 77.0% of the time on data with no effect (should be about 5%); 95% CI 70.7%-82.3%"
+    ],
+    "notes": []
    },
    "phi=0.5": {
     "check": "null_calibration",
@@ -30,8 +31,9 @@
     ],
     "verdict": "MISCALIBRATED",
     "reasons": [
-     "says 'significant' 94% of the time on data with no effect (should be about 5%); 95% CI 90%-96%"
-    ]
+     "says 'significant' 94.0% of the time on data with no effect (should be about 5%); 95% CI 89.8%-96.5%"
+    ],
+    "notes": []
    },
    "phi=0.9": {
     "check": "null_calibration",
@@ -46,8 +48,9 @@
     ],
     "verdict": "MISCALIBRATED",
     "reasons": [
-     "says 'significant' 92% of the time on data with no effect (should be about 5%); 95% CI 87%-95%"
-    ]
+     "says 'significant' 91.5% of the time on data with no effect (should be about 5%); 95% CI 86.8%-94.6%"
+    ],
+    "notes": []
    }
   },
   "C1 random index (control)": {
@@ -63,7 +66,10 @@
      0.09
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 9.0%, not milder inflation"
+    ]
    },
    "phi=0.5": {
     "check": "null_calibration",
@@ -77,7 +83,10 @@
      0.077
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 7.7%, not milder inflation"
+    ]
    },
    "phi=0.9": {
     "check": "null_calibration",
@@ -92,8 +101,9 @@
     ],
     "verdict": "MISCALIBRATED",
     "reasons": [
-     "says 'significant' 12% of the time on data with no effect (should be about 5%); 95% CI 8%-17%"
-    ]
+     "says 'significant' 11.5% of the time on data with no effect (should be about 5%); 95% CI 7.8%-16.7%"
+    ],
+    "notes": []
    }
   },
   "V1 selection-aware, block shuffle": {
@@ -109,7 +119,10 @@
      0.07
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 7.0%, not milder inflation"
+    ]
    },
    "phi=0.5": {
     "check": "null_calibration",
@@ -124,8 +137,9 @@
     ],
     "verdict": "MISCALIBRATED",
     "reasons": [
-     "says 'significant' 19% of the time on data with no effect (should be about 5%); 95% CI 14%-25%"
-    ]
+     "says 'significant' 19.0% of the time on data with no effect (should be about 5%); 95% CI 14.2%-25.0%"
+    ],
+    "notes": []
    },
    "phi=0.9": {
     "check": "null_calibration",
@@ -140,8 +154,9 @@
     ],
     "verdict": "MISCALIBRATED",
     "reasons": [
-     "says 'significant' 30% of the time on data with no effect (should be about 5%); 95% CI 24%-36%"
-    ]
+     "says 'significant' 29.5% of the time on data with no effect (should be about 5%); 95% CI 23.6%-36.2%"
+    ],
+    "notes": []
    }
   },
   "V2 selection-aware, phase-randomized": {
@@ -157,7 +172,10 @@
      0.09
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 9.0%, not milder inflation"
+    ]
    },
    "phi=0.5": {
     "check": "null_calibration",
@@ -171,7 +189,10 @@
      0.114
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 11.4%, not milder inflation"
+    ]
    },
    "phi=0.9": {
     "check": "null_calibration",
@@ -185,7 +206,10 @@
      0.064
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 6.4%, not milder inflation"
+    ]
    }
   },
   "V3 selection-aware, AR(1) bootstrap": {
@@ -201,7 +225,10 @@
      0.057
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 5.7%, not milder inflation"
+    ]
    },
    "phi=0.5": {
     "check": "null_calibration",
@@ -215,7 +242,10 @@
      0.108
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 10.8%, not milder inflation"
+    ]
    },
    "phi=0.9": {
     "check": "null_calibration",
@@ -229,7 +259,10 @@
      0.083
     ],
     "verdict": "CALIBRATED",
-    "reasons": []
+    "reasons": [],
+    "notes": [
+     "200 trials rule out false-positive rates above 8.3%, not milder inflation"
+    ]
    }
   }
  },
@@ -240,22 +273,36 @@
     "name": "V1 selection-aware, block shuffle | step 1.0 sd",
     "trials": 100,
     "detected": 8,
+    "alpha": 0.05,
     "power": 0.08,
     "ci95": [
      0.041,
      0.15
-    ]
+    ],
+    "min_power": 0.5,
+    "verdict": "LOW POWER",
+    "reasons": [
+     "finds the planted effect only 8% of the time (want at least 50%): a 'no effect' result here means little"
+    ],
+    "notes": []
    },
    "step=1.5sd": {
     "check": "power",
     "name": "V1 selection-aware, block shuffle | step 1.5 sd",
     "trials": 100,
     "detected": 6,
+    "alpha": 0.05,
     "power": 0.06,
     "ci95": [
      0.028,
      0.125
-    ]
+    ],
+    "min_power": 0.5,
+    "verdict": "LOW POWER",
+    "reasons": [
+     "finds the planted effect only 6% of the time (want at least 50%): a 'no effect' result here means little"
+    ],
+    "notes": []
    }
   },
   "V2 selection-aware, phase-randomized": {
@@ -264,22 +311,36 @@
     "name": "V2 selection-aware, phase-randomized | step 1.0 sd",
     "trials": 100,
     "detected": 4,
+    "alpha": 0.05,
     "power": 0.04,
     "ci95": [
      0.016,
      0.098
-    ]
+    ],
+    "min_power": 0.5,
+    "verdict": "LOW POWER",
+    "reasons": [
+     "finds the planted effect only 4% of the time (want at least 50%): a 'no effect' result here means little"
+    ],
+    "notes": []
    },
    "step=1.5sd": {
     "check": "power",
     "name": "V2 selection-aware, phase-randomized | step 1.5 sd",
     "trials": 100,
     "detected": 3,
+    "alpha": 0.05,
     "power": 0.03,
     "ci95": [
      0.01,
      0.085
-    ]
+    ],
+    "min_power": 0.5,
+    "verdict": "LOW POWER",
+    "reasons": [
+     "finds the planted effect only 3% of the time (want at least 50%): a 'no effect' result here means little"
+    ],
+    "notes": []
    }
   },
   "V3 selection-aware, AR(1) bootstrap": {
@@ -288,22 +349,36 @@
     "name": "V3 selection-aware, AR(1) bootstrap | step 1.0 sd",
     "trials": 100,
     "detected": 1,
+    "alpha": 0.05,
     "power": 0.01,
     "ci95": [
      0.002,
      0.054
-    ]
+    ],
+    "min_power": 0.5,
+    "verdict": "LOW POWER",
+    "reasons": [
+     "finds the planted effect only 1% of the time (want at least 50%): a 'no effect' result here means little"
+    ],
+    "notes": []
    },
    "step=1.5sd": {
     "check": "power",
     "name": "V3 selection-aware, AR(1) bootstrap | step 1.5 sd",
     "trials": 100,
     "detected": 3,
+    "alpha": 0.05,
     "power": 0.03,
     "ci95": [
      0.01,
      0.085
-    ]
+    ],
+    "min_power": 0.5,
+    "verdict": "LOW POWER",
+    "reasons": [
+     "finds the planted effect only 3% of the time (want at least 50%): a 'no effect' result here means little"
+    ],
+    "notes": []
    }
   }
  },

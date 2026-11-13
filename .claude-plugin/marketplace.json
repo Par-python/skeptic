@@ -1,0 +1,14 @@
+{
+  "name": "par-python-skeptic",
+  "description": "skeptic: is this data result real, or would you have gotten it from nothing?",
+  "owner": {
+    "name": "John Jerome Pardo"
+  },
+  "plugins": [
+    {
+      "name": "skeptic",
+      "source": "./",
+      "description": "Checks data claims (p < 0.05, beats baseline, X% accurate) against pure noise and do-nothing baselines."
+    }
+  ]
+}
